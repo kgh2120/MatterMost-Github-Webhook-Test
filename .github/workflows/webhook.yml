@@ -11,6 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name : show info
+        run : echo "GITHUB_CONTEXT"
+    
       - name: Create the Mattermost Message
         env:
           NUMBER: ${{github.event.issue.number}}
