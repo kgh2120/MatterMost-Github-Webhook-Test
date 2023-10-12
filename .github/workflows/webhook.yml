@@ -1,6 +1,10 @@
 name: Github to MatterMost WebHook
 
-on: issues
+on: 
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created, deleted]
     
 
 jobs:
