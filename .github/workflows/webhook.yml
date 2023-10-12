@@ -12,13 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create the Mattermost Message
+        env:
+          NUMBER: ${{github.event.issue.number}}
+          ACTOR : ${{github.event.issue.actor}}
         run: |
           echo "{\"text\":\" ${{ACTOR}} created ${{NUMBER}}\"}" > mattermost.json
       - uses: mattermost/action-mattermost-notify@master
         env:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
-          NUMBER: ${{github.event.issue.number}}
-          ACTOR : ${{github.event.issue.actor}}
+
 
 
       
