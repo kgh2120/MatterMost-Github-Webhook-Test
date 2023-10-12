@@ -20,7 +20,7 @@ jobs:
           TITLE : ${{ github.event.issue.title}}
           ACTOR : ${{github.actor}}
         run: |
-          echo "{\"text\":\" $ACTOR created #$NUMBER $TITLE\"}" > mattermost.json
+          echo "{\"text\":\" > $ACTOR created #$NUMBER $TITLE\"}" > mattermost.json
       - uses: mattermost/action-mattermost-notify@master
         env:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
