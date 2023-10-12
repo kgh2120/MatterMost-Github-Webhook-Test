@@ -1,14 +1,7 @@
 name: Github to MatterMost WebHook
 
-on:
-  pull_request:
-    types: [review_requested, created, closed]
-  pull_request_review_comment:
-    types: [created, edited]
-  issues:
-    types: [opend, closed]
-  issue_comment:
-    types: [created]
+on: issues
+    
 
 jobs:
   build:
